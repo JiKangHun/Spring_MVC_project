@@ -15,13 +15,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.java.boostproject.model.BoardVO;
+import com.java.boostproject.model.BudgetVO;
 import com.java.boostproject.model.pageInfo;
 import com.java.boostproject.model.MemVO;
 import com.java.boostproject.model.PageVO;
+import com.java.boostproject.model.SearchVO;
 import com.java.boostproject.service.IBoardService;
+import com.java.boostproject.service.IMLService;
 import com.java.boostproject.service.IMemService;
 
 
@@ -38,9 +42,12 @@ public class BoostController {
    @Autowired
    IBoardService boardService;
    
+   @Autowired
+   IMLService mLService;
+   
    
    @RequestMapping(value = "/soge", method = RequestMethod.GET)
-   public String soge() {
+ @ResponseBody   public String soge() {
       return "soge";
    }
    
@@ -328,8 +335,16 @@ public class BoostController {
    
    
    @RequestMapping(value = "/ML", method = RequestMethod.GET)
-   public String ML() {
+   public String ML(Model model,String region) {
+	   if(region==null){
+		   region="계룡";
+	   }
 
+	   BudgetVO budgetvo=mLService.getBudget(region);
+	   SearchVO searchvo=mLService.getSearch(region);
+	   model.addAttribute("budgetvo",budgetvo);
+	   model.addAttribute("searchvo",searchvo);
+	   
       return "ML";
    }
    
