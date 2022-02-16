@@ -58,7 +58,10 @@
             </li>
             <li>                    
                 <a href="board" id="fontcolor"role="button" aria-expanded="false">공지사항 </a>
-            </li>            
+            </li>
+            <li>                    
+                <a href="ML" id="fontcolor"role="button" aria-expanded="false">관광객수 예측</a>
+            </li>             
             </ul>
             
             <c:if test="${member == null && admin == null}">                        

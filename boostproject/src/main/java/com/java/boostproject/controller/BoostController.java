@@ -327,6 +327,11 @@ public class BoostController {
    }
    
    
+   @RequestMapping(value = "/ML", method = RequestMethod.GET)
+   public String ML() {
+
+      return "ML";
+   }
    
 
 
