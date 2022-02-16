@@ -72,27 +72,27 @@
     		<span class="caret"></span>
   			</button>
  			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">계룡시</a></li>
-     			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">고성군</a></li>
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">고성군</a></li>
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">금산군</a></li>
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">단양군</a></li>
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">보은군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">서천군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">양구군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">양양군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">연천군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">영동군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">영월군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">인제군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">정선군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">증평군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">철원군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">청양군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">태백시</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">평창군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">화천군</a></li>    
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">횡성군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=계룡">계룡시</a></li>
+     			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=고성군">고성군</a></li>
+     			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=괴산군">괴산군</a></li>
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=금산군">금산군</a></li>
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=단양군">단양군</a></li>
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=보은군">보은군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=서천군">서천군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=양구군">양구군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=양양군">양양군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=연천군">연천군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=영동군">영동군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=영월군">영월군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=인제군">인제군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=정선군">정선군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=증평군">증평군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=철원군">철원군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=청양군">청양군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=태백시">태백시</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=평창군">평창군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=화천군">화천군</a></li>    
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=횡성군">횡성군</a></li>    
     			    			
   			</ul>
 			</div>
@@ -111,13 +111,13 @@
              <div class="table-responsive">
              <table class="table table-hover table4">
              	<tr class="active">
-             		<th>지역이름(db)</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th>
+             		<th>${searchvo.region}</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th>
              	</tr>
              	<tr>
-             		<td>예산</td><td>(db)</td><td>(db)</td><td>(db)</td><td>(db)</td>
+             		<td>예산</td><td>${budgetvo.y2019}</td><td>${budgetvo.y2020}</td><td>${budgetvo.y2021}</td><td>${budgetvo.y2022}</td>
              	</tr>
              	<tr>
-             		<td>검색량</td><td>(db)</td><td>(db)</td><td>(db)</td><td>x</td>
+             		<td>검색량</td><td>${searchvo.y2019}</td><td>${searchvo.y2020}</td><td>${searchvo.y2021}</td><td>x</td>
              	</tr>             	     
              </table>
              </div><!-- table responsive -->       	        	        	 
@@ -128,8 +128,18 @@
   				<canvas id="myChart"></canvas>
 			</div>
 			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+			
              <script>
              var ctx = document.getElementById('myChart').getContext('2d');
+             var search2019=${searchvo.y2019};
+             var search2020=${searchvo.y2020};
+             var search2021=${searchvo.y2021};
+             var budget2019=${budgetvo.y2019};
+             var budget2020=${budgetvo.y2020};
+             var budget2021=${budgetvo.y2021};
+             var budget2022=${budgetvo.y2022};
+             var region="${budgetvo.region};"
+             
              var data = {
                  // The type of chart we want to create
                  type: 'line',
@@ -141,14 +151,14 @@
                          backgroundColor: 'rgb(255, 99, 132)',
                          fill:false, // line의 아래쪽을 색칠할 것인가? 
                          borderColor: 'rgb(255, 99, 132)',                        
-                         data: [300,200,250,350],
+                         data: [budget2019,budget2020,budget2021,budget2022],
                          yAxisID: 'y',
                      },
                      {
                     	 label:'검색량',
                     	 backgroundColor:'rgb(255, 124, 128)',
                     	 fill:false, 
-                    	 data:[200,300,100,250],
+                    	 data:[search2019,search2020,search2021,0],
                     	 borderColor:'rgb(255, 124, 128)',
                     	 yAxisID: 'y1',
                     		 
