@@ -5,7 +5,9 @@ import org.springframework.stereotype.Service;
 
 import com.java.boostproject.dao.IMLRepository;
 import com.java.boostproject.model.BudgetVO;
+import com.java.boostproject.model.FoodVO;
 import com.java.boostproject.model.SearchVO;
+import com.java.boostproject.model.TouristVO;
 
 @Service
 public class MLService implements IMLService{
@@ -23,5 +25,18 @@ public class MLService implements IMLService{
 		// TODO Auto-generated method stub
 		return mLRepository.getBudget(region);
 	}
+	
+	@Override
+	public FoodVO getFood(String region) {
+		// TODO Auto-generated method stub
+		return mLRepository.getFood(region);
+	}
+
+	@Override
+	public TouristVO getTourist(String region) {
+		// TODO Auto-generated method stub
+		return mLRepository.getTourist(region);
+	}
+
 
 }

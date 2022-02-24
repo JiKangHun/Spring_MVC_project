@@ -20,10 +20,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.java.boostproject.model.BoardVO;
 import com.java.boostproject.model.BudgetVO;
+import com.java.boostproject.model.FoodVO;
 import com.java.boostproject.model.pageInfo;
 import com.java.boostproject.model.MemVO;
 import com.java.boostproject.model.PageVO;
 import com.java.boostproject.model.SearchVO;
+import com.java.boostproject.model.TouristVO;
 import com.java.boostproject.service.IBoardService;
 import com.java.boostproject.service.IMLService;
 import com.java.boostproject.service.IMemService;
@@ -47,7 +49,7 @@ public class BoostController {
    
    
    @RequestMapping(value = "/soge", method = RequestMethod.GET)
- @ResponseBody   public String soge() {
+   public String soge() {
       return "soge";
    }
    
@@ -172,7 +174,40 @@ public class BoostController {
          out.flush();
       }
       return urlResult;
-   }   
+   }
+   @RequestMapping(value = "/ML", method = RequestMethod.GET)
+   public String ML(Model model,String region,HttpServletRequest req, HttpServletResponse res) throws IOException{
+	   String urlResult;
+	   HttpSession session=req.getSession();
+	   String mem=(String)session.getAttribute("member");
+	   String admin=(String)session.getAttribute("admin");
+	   if(mem!=null||admin!=null) {
+		   urlResult="ML";
+	   }else {
+		   urlResult="sign_in";
+		   res.setContentType("text/html;charset=euc-kr");
+		   PrintWriter out=res.getWriter();
+		   out.println("<script>alert('로그인 후 이용가능한 서비스입니다')</script>");
+		   out.flush();
+	   }
+	   if(region==null){
+		   region="계룡시";
+	   }
+
+	   BudgetVO budgetvo=mLService.getBudget(region);
+	   SearchVO searchvo=mLService.getSearch(region);
+	   FoodVO foodvo=mLService.getFood(region);
+	   TouristVO touristvo=mLService.getTourist(region);
+	   model.addAttribute("budgetvo",budgetvo);
+	   model.addAttribute("searchvo",searchvo);
+	   model.addAttribute("foodvo",foodvo);
+	   model.addAttribute("touristvo",touristvo);
+	   System.out.println(searchvo.getY2022());
+	   
+	   
+	   
+      return urlResult;
+   }
    
    @RequestMapping(value = "/mining", method = RequestMethod.GET)
    public String mining(HttpServletRequest req, HttpServletResponse res) throws IOException {
@@ -334,19 +369,7 @@ public class BoostController {
    }
    
    
-   @RequestMapping(value = "/ML", method = RequestMethod.GET)
-   public String ML(Model model,String region) {
-	   if(region==null){
-		   region="계룡";
-	   }
 
-	   BudgetVO budgetvo=mLService.getBudget(region);
-	   SearchVO searchvo=mLService.getSearch(region);
-	   model.addAttribute("budgetvo",budgetvo);
-	   model.addAttribute("searchvo",searchvo);
-	   
-      return "ML";
-   }
    
 
 
