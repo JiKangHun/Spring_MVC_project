@@ -1,12 +1,18 @@
 package com.java.boostproject.model;
 
-public class SearchVO {
+public class TouristVO {
 	private String region;
 	private long Y2019;
 	private long Y2020;
 	private long Y2021;
 	private long Y2022;
 
+	public long getY2022() {
+		return Y2022;
+	}
+	public void setY2022(long y2022) {
+		Y2022 = y2022;
+	}
 	public String getRegion() {
 		return region;
 	}
@@ -30,12 +36,6 @@ public class SearchVO {
 	}
 	public void setY2021(long y2021) {
 		Y2021 = y2021;
-	}
-	public long getY2022() {
-		return Y2022;
-	}
-	public void setY2022(long y2022) {
-		Y2022 = y2022;
 	}
 
 }

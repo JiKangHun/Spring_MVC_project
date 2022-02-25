@@ -59,6 +59,7 @@
 </head>
 <body>
     <jsp:include page="header.jsp"/>
+    <section>
     <div id="style" class="jumbotron">
     	<h2 class="text-center">ML 분석결과</h2>
     </div>
@@ -72,7 +73,7 @@
     		<span class="caret"></span>
   			</button>
  			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=계룡">계룡시</a></li>
+    			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=계룡시">계룡시</a></li>
      			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=고성군">고성군</a></li>
      			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=괴산군">괴산군</a></li>
     			<li role="presentation"><a role="menuitem" tabindex="-1" href="ML?region=금산군">금산군</a></li>
@@ -105,7 +106,7 @@
         	<h2 id="예산 및 검색량"></h2>
         
         	<div id="style2" class="jumbotron text-center">                     
-            	<h2 id="style1">예산 및 검색량(2019~2022)</h2> 
+            	<h2 id="style1">예산 및 관광지&맛집 검색량(2019~2022)</h2> 
         	</div>
         	
              <div class="table-responsive">
@@ -117,12 +118,20 @@
              		<td>예산</td><td>${budgetvo.y2019}</td><td>${budgetvo.y2020}</td><td>${budgetvo.y2021}</td><td>${budgetvo.y2022}</td>
              	</tr>
              	<tr>
-             		<td>검색량</td><td>${searchvo.y2019}</td><td>${searchvo.y2020}</td><td>${searchvo.y2021}</td><td>x</td>
-             	</tr>             	     
+             		<td>관광 검색량</td><td>${searchvo.y2019}</td><td>${searchvo.y2020}</td><td>${searchvo.y2021}</td><td>${searchvo.y2022}</td>
+             	</tr>
+             	<tr>
+             		<td>맛집 검색량</td><td>${foodvo.y2019}</td><td>${foodvo.y2020}</td><td>${foodvo.y2021}</td><td>${foodvo.y2022}</td>
+             	</tr>              	     
              </table>
              </div><!-- table responsive -->       	        	        	 
-           		 검색량 2022년 예측 불가<br>
-            	관광 예산 참고<br>
+           		 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+           		  2022년 관광지&맛집 검색량은 2019~2021년 검색량의 평균값 기입<br>
+           		  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+           		  왼쪽 Y축: 예산 및 관광지 검색량<br>
+           		  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;	
+           		  오른쪽 Y축: 맛집 검색량
+           		   <br><br>
             
             <div>
   				<canvas id="myChart"></canvas>
@@ -134,10 +143,15 @@
              var search2019=${searchvo.y2019};
              var search2020=${searchvo.y2020};
              var search2021=${searchvo.y2021};
+             var search2022=${searchvo.y2022};
              var budget2019=${budgetvo.y2019};
              var budget2020=${budgetvo.y2020};
              var budget2021=${budgetvo.y2021};
              var budget2022=${budgetvo.y2022};
+             var food2019=${foodvo.y2019};
+             var food2020=${foodvo.y2020};
+             var food2021=${foodvo.y2021};
+             var food2022=${foodvo.y2022};
              var region="${budgetvo.region};"
              
              var data = {
@@ -154,14 +168,24 @@
                          data: [budget2019,budget2020,budget2021,budget2022],
                          yAxisID: 'y',
                      },
+                     
                      {
-                    	 label:'검색량',
+                    	 label:'관광지 검색량',
                     	 backgroundColor:'rgb(255, 124, 128)',
                     	 fill:false, 
-                    	 data:[search2019,search2020,search2021,0],
+                    	 data:[search2019,search2020,search2021,search2022],
                     	 borderColor:'rgb(255, 124, 128)',
-                    	 yAxisID: 'y1',
+                    	 yAxisID: 'y',
                     		 
+                    		 
+                     },
+                     {
+                    	 label:'맛집 검색량',
+                         backgroundColor:'rgb(119, 158, 203)',
+                         fill:false, 
+                         data:[food2019,food2020,food2021,food2022],
+                         borderColor:'rgb(119, 158, 203)',
+                         yAxisID: 'y2',
                     		 
                      }
                      ]
@@ -176,7 +200,7 @@
                 	 plugins: {
                 	      title: {
                 	        display: true,
-                	        text: '예산 및 검색량 그래프'
+                	        text: '예산 및 관광지&맛집 검색량 그래프'
                 	      }
                 	    },
                 	    
@@ -186,7 +210,8 @@
                 	          display: true,
                 	          position: 'left',
                 	        },
-                	        y1: {
+  
+                	        y2: {
                 	          type: 'linear',
                 	          display: true,
                 	          position: 'right',
@@ -202,6 +227,7 @@
              var chart = new Chart(ctx, data);
         	
         	</script>
+        	<br><br>
             	
 
             	
@@ -210,24 +236,25 @@
             	<h2 id="style1">관광객수 추정</h2> 
         	</div>
         	  <div class="table-responsive">
-             <table class="table table-hover table4">
+              <table class="table table-hover table4">
              	<tr class="active">
-             		<th>지역이름(db)</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th>
+             		<th>${touristvo.region}</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th>
              	</tr>
              	<tr>
-             		<td>예산</td><td>(db)</td><td>(db)</td><td>(db)</td><td>(db)</td>
-             	</tr>
-             	<tr>
-             		<td>검색량</td><td>(db)</td><td>(db)</td><td>(db)</td><td>x</td>
-             	</tr>             	     
-             </table>
-        	
+             		<td>관광객수</td><td>${touristvo.y2019}</td><td>${touristvo.y2020}</td><td>${touristvo.y2021}</td><td>${touristvo.y2022}</td>
+ 				</tr>
+        	 </table>
+        	 </div>
         	<div>
   				<canvas id="myChart2"></canvas>
 			</div>
 			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
              <script>
              var ctx2 = document.getElementById('myChart2').getContext('2d');
+             var tourist2019=${touristvo.y2019};
+             var tourist2020=${touristvo.y2020};
+             var tourist2021=${touristvo.y2021};
+             var tourist2022=${touristvo.y2022};
              var data2 = {
                  // The type of chart we want to create
                  type: 'line',
@@ -235,33 +262,14 @@
                  data: {
                      labels: ["2019", "2020", "2021", "2022"],
                      datasets: [{
-                         label: "평균값",
+                         label: "관광객수",
                          backgroundColor: 'rgb(255, 99, 132)',
                          fill:false, // line의 아래쪽을 색칠할 것인가? 
                          borderColor: 'rgb(255, 99, 132)',                        
-                         data: [300,200,250,350],
+                         data: [tourist2019,tourist2020,tourist2021,tourist2022],
                          yAxisID: 'y',
                      },
-                     {
-                    	 label:'최소',
-                    	 backgroundColor:'rgb(255, 124, 128)',
-                    	 fill:false, 
-                    	 data:[200,300,100,150],
-                    	 borderColor:'rgb(255, 124, 128)',
-                    	 yAxisID: 'y1',
-                    		 
-                    		 
-                     },
-                     {
-                    	 label:'최대',
-                    	 backgroundColor:'rgb(255, 124, 100)',
-                    	 fill:false, 
-                    	 data:[200,300,100,400],
-                    	 borderColor:'rgb(255, 124, 128)',
-                    	 yAxisID: 'y1',
-                    		 
-                    		 
-                     }
+                     
                      ]
                  },
                  // Configuration options go here
@@ -284,24 +292,14 @@
                 	          display: true,
                 	          position: 'left',
                 	        },
-                	        y1: {
-                	          type: 'linear',
-                	          display: true,
-                	          position: 'right',
-
-                	          // grid line settings
-                	          grid: {
-                	            drawOnChartArea: false, // only want the grid lines for one axis to show up
-                	          },
-                	        },
                 	      }
                 	    },
                 	  };
              var chart2= new Chart(ctx2, data2);
         	
         	</script>
-            	
-        
+            	<br><br>
+        	
     		</div><!-- bs-docs-section -->
     	  </div><!-- col-md-9 -->
     	</div><!-- row -->
@@ -310,7 +308,7 @@
 
 
 
-
+</section>
 
     
 <jsp:include page="footer.jsp"/>
