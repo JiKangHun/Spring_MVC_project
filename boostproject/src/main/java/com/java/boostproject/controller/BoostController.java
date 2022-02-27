@@ -63,6 +63,21 @@ public class BoostController {
       return "soge#데이터%20및%20분석방법";
    }
    
+   @RequestMapping(value = "/gather", method = RequestMethod.GET)
+   public String gather() {
+      return "gather";
+   }
+   
+   @RequestMapping(value = "/analyze", method = RequestMethod.GET)
+   public String analyze() {
+      return "analyze";
+   }
+   
+   @RequestMapping(value = "/prediction", method = RequestMethod.GET)
+   public String prediction() {
+      return "prediction";
+   }
+   
    @RequestMapping(value = "/H", method = RequestMethod.GET)
    public String H(HttpServletRequest req, HttpServletResponse res) throws IOException {
       String urlResult;
