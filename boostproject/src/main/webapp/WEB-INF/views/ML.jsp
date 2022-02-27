@@ -140,7 +140,7 @@
 			
              <script>
              var ctx = document.getElementById('myChart').getContext('2d');
-             var search2019=${searchvo.y2019};
+             var search2019=	${searchvo.y2019};
              var search2020=${searchvo.y2020};
              var search2021=${searchvo.y2021};
              var search2022=${searchvo.y2022};
@@ -209,13 +209,24 @@
                 	          type: 'linear',
                 	          display: true,
                 	          position: 'left',
+                	          title:{
+                	        	  display:true,
+                	        	  //align:'end',
+                	        	  text:'예산&관광지 검색량'
+                	          },
                 	        },
   
                 	        y2: {
                 	          type: 'linear',
                 	          display: true,
                 	          position: 'right',
-
+                	          title:{
+                	        	  display:true,
+                	        	  //align:'end',
+                	        	  text:'맛집 검색량'
+                	          },
+                	          
+ 
                 	          // grid line settings
                 	          grid: {
                 	            drawOnChartArea: false, // only want the grid lines for one axis to show up
@@ -266,7 +277,7 @@
                          backgroundColor: 'rgb(255, 99, 132)',
                          fill:false, // line의 아래쪽을 색칠할 것인가? 
                          borderColor: 'rgb(255, 99, 132)',                        
-                         data: [tourist2019,tourist2020,tourist2021,tourist2022],
+                         data: [tourist2019/10,tourist2020,tourist2021,tourist2022],
                          yAxisID: 'y',
                      },
                      
