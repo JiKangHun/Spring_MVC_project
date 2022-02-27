@@ -89,7 +89,7 @@
                     <p>
                         <div id="style1" class = "bg-info mainTitle text-center"><br><h2 class="text">머신러닝 & 딥러닝</h2><br></div><br>
                         <div>
-                        <span id="fontcolor1"><h3>머신러닝 의도 및 방법</h3><br>
+                        <h3 id="fontcolor1" class="txtbg">머신러닝 의도 및 방법</h3><br>
                         <h4>머신러닝 의도</h4><br>
                         데이터 분석에서 활용한 관광활성화 요인 데이터를 가지고 각 지자체의 향후 관광객 수를 예측하여 각 군 간의 관광객 수 예측값을 비교 -> 
                         이를 통해 각 지자체는 개별 관광활성화 요인 중 부족한 점을 파악할 수 있음<br><br><br><br>

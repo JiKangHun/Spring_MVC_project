@@ -90,7 +90,7 @@
                         <div id="style1" class = "bg-info mainTitle text-center"><br><h2 class="text">크롤링</h2><br></div><br>
                         <div>
                         
-                        <h3>크롤링 데이터</h3><br><!-- 밀집도 -->
+                        <h3 class="txtbg">크롤링 데이터</h3><br><!-- 밀집도 -->
                         
                         <h4>기획의도</h4><br>
                         관광객이 여행 정보 사이트인 TripAdvisor에 남긴 후기를 수집하여 시각화 한 정보를 제공
