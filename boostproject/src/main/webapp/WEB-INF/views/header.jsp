@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="dropdown" >
-                    <a href="#" id="fontcolor" class="dropdown=toggle" data-toggle="dropdown" role="button" aria-expanded="false">데이터 수집<span class="caret"></span></a>
+                    <a href="#" id="fontcolor" class="dropdown=toggle" data-toggle="dropdown" role="button" aria-expanded="false">프로젝트 소개<span class="caret"></span></a>
                         <ul  id="style" class="dropdown-menu" role="menu">
                             <li><a  id="fontcolor" href="soge">연구주제 및 배경</a></li>
                             <li class="divider"></li>
@@ -36,8 +36,18 @@
                             <li><a  id="fontcolor" href="soge#데이터%20및%20분석방법">데이터 및 분석방법</a></li>                      
                         </ul>
                </li>
+               <li class="dropdown" >
+                    <a href="#" id="fontcolor" class="dropdown=toggle" data-toggle="dropdown" role="button" aria-expanded="false">프로젝트 데이터<span class="caret"></span></a>
+                        <ul  id="style" class="dropdown-menu" role="menu">
+                            <li><a  id="fontcolor" href="">데이터 수집</a></li>
+                            <li class="divider"></li>
+                            <li><a  id="fontcolor"  href="">데이터 분석</a></li>
+                            <li class="divider"></li>
+                            <li><a  id="fontcolor" href="">데이터 예측</a></li>                      
+                        </ul>
+               </li>
             <li class="dropdown">
-                <a href="#" id="fontcolor" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">데이터 분석<span class="caret"></span></a>
+                <a href="#" id="fontcolor" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">데이터 수집 결과<span class="caret"></span></a>
                 <ul id="style" class="dropdown-menu" role="menu">
                     <li><a  id="fontcolor" href="H">H군</a></li>
                     <li class="divider"></li>
@@ -47,7 +57,7 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#" id="fontcolor" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">관광지 리뷰 분석<span class="caret"></span></a>
+                <a href="#" id="fontcolor" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">데이터 분석 결과<span class="caret"></span></a>
                 <ul id="style" class="dropdown-menu" role="menu">
                     <li><a  id="fontcolor" href="mining">H군</a></li>
                     <li class="divider"></li>
@@ -57,10 +67,10 @@
                 </ul>
             </li>
             <li>                    
-                <a href="board" id="fontcolor"role="button" aria-expanded="false">공지사항 </a>
+                <a href="ML" id="fontcolor"role="button" aria-expanded="false">관광객수 예측</a>
             </li>
             <li>                    
-                <a href="ML" id="fontcolor"role="button" aria-expanded="false">관광객수 예측</a>
+                <a href="board" id="fontcolor"role="button" aria-expanded="false">공지사항 </a>
             </li>             
             </ul>
             
@@ -71,8 +81,6 @@
                 <a href="#" id="fontcolor" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mypage <span class="caret"></span></a>
                 <ul id="style" class="dropdown-menu" role="menu">
                 <li><a  id="fontcolor" href="#">Member_Info</a></li>
-                <li><a  id="fontcolor" href="#">Another action</a></li>
-                <li><a  id="fontcolor" href="#">Something else here</a></li>
                 <li class="divider"></li>
                 <li><a  id="fontcolor" href="logout">Logout</a></li>
                 </ul>
