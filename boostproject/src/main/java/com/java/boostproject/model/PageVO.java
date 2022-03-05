@@ -15,21 +15,21 @@ public class PageVO {
     private int total;
     
     /* 현재 페이지, 페이지당 게시물 표시수 정보 */
-    private pageInfo pginfo;
+    private pageInfo pgInfo;
     
     /* 생성자 */
-    public PageVO(pageInfo pginfo, int total) {
+    public PageVO(pageInfo pgInfo, int total) {
         
-        this.pginfo = pginfo;
+        this.pgInfo = pgInfo;
         this.total = total;
         
         /* 마지막 페이지 */
-        this.endPage = (int)(Math.ceil(pginfo.getPageNum()/5.0))*5;
+        this.endPage = (int)(Math.ceil(pgInfo.getPageNum()/5.0))*5;
         /* 시작 페이지 */
         this.startPage = this.endPage - 4;
         
         /* 전체 마지막 페이지 */
-        int realEnd = (int)(Math.ceil(total * 1.0/pginfo.getAmount()));
+        int realEnd = (int)(Math.ceil(total * 1.0/pgInfo.getAmount()));
         
         /* 전체 마지막 페이지(realend)가 화면에 보이는 마지막페이지(endPage)보다 작은 경우, 보이는 페이지(endPage) 값 조정 */
         if(realEnd < this.endPage) {
@@ -85,12 +85,12 @@ public class PageVO {
 		this.total = total;
 	}
 
-	public pageInfo getpginfo() {
-		return pginfo;
+	public pageInfo getpgInfo() {
+		return pgInfo;
 	}
 
-	public void setpginfo(pageInfo pginfo) {
-		this.pginfo = pginfo;
+	public void setpginfo(pageInfo pgInfo) {
+		this.pgInfo = pgInfo;
 	}
  
 }

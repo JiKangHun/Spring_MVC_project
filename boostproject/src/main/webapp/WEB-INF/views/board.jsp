@@ -64,7 +64,7 @@
                 <th>#</th><th>제목</th><th colspan="2" >게시일</th>
             </tr>
         	
-           <c:set var="num" value="${1+(pagevo.pginfo.pageNum-1)*10}"/>
+           <c:set var="num" value="${1+(pagevo.pgInfo.pageNum-1)*10}"/>
            <c:forEach var="list_board" items="${list}">          
             <tr>
               <td>${num}</td>
@@ -88,9 +88,9 @@
             </c:if>
            	<!-- 페이지번호 -->
                 <c:forEach var="num" begin="${pagevo.startPage}" end="${pagevo.endPage}">
-                <li class="${pagevo.pginfo.pageNum == num ? "active" : ""}">
+                <li class="${pagevo.pgInfo.pageNum == num ? "active" : ""}">
                 <a href="board?pageNum=${num}">${num}
-                <c:if test="${pagevo.pginfo.pageNum == num}"><span class="sr-only">(current)</span></c:if>
+                <c:if test="${pagevo.pgInfo.pageNum == num}"><span class="sr-only">(current)</span></c:if>
                 </a>
                 </li>                
                 </c:forEach>                                              
@@ -115,7 +115,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script>
     	$(document).ready(function(){
-    		if($(".pageCss").val() == ${pagevo.pginfo.pageNum}){
+    		if($(".pageCss").val() == ${pagevo.pgInfo.pageNum}){
     			$(this).css('backgroundColor','red');
     		}
     	});

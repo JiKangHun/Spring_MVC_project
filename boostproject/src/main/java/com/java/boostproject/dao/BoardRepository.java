@@ -49,7 +49,7 @@ public class BoardRepository implements IBoardRepository{
 	}
 	
 	@Override
-	public List<BoardVO> getListPaging(pageInfo pginfo) {
+	public List<BoardVO> getListPaging(pageInfo pgInfo) {
 		// TODO Auto-generated method stub
 		String sql="select * from(select rownum num,title,content,regi_date,no from(select * from board order by regi_date desc))  where num > (?-1) * ? and num<=?*?";
 		return jdbcTemplate.query(sql, new RowMapper<BoardVO> () {
@@ -62,7 +62,7 @@ public class BoardRepository implements IBoardRepository{
 				
 				return board;
 			}
-		}, pginfo.getPageNum(), pginfo.getAmount(), pginfo.getPageNum(), pginfo.getAmount());
+		}, pgInfo.getPageNum(), pgInfo.getAmount(), pgInfo.getPageNum(), pgInfo.getAmount());
 	}
 		@Override
 	   public BoardVO getContent(int no) {	

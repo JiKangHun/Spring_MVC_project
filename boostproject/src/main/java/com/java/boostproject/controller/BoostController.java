@@ -352,12 +352,12 @@ public class BoostController {
    }
    
    @RequestMapping(value = "/board", method = RequestMethod.GET)
-   public String board(Model model, pageInfo pginfo) {
+   public String board(Model model, pageInfo pgInfo) {
       
-     List<BoardVO> list=boardService.getListPaging(pginfo);
+     List<BoardVO> list=boardService.getListPaging(pgInfo);
      model.addAttribute("list",list);
      int total = boardService.countBoard();
-     PageVO pagevo = new PageVO(pginfo, total);
+     PageVO pagevo = new PageVO(pgInfo, total);
  
      model.addAttribute("pagevo", pagevo);
                 
