@@ -74,9 +74,9 @@
             <div class="col-md-3">
             <nav class="bs-docs-sidebaar hidden-print hidden-xs hidden-sm affix">
                 <div id ="menu" class = "list-group affix" >
-                    <a href="gather" id="style2" class="list-group-item">데이터 수집</a>
-                    <a href="analyze" id="style2" class="list-group-item ">데이터 분석</a>
-                    <a href="prediction" id="style2" class="list-group-item ">데이터 예측</a>
+                    <a href="gather" id="style2" class="list-group-item">리뷰 데이터 수집</a>
+                    <a href="analyze" id="style2" class="list-group-item ">데이터 분석 절차</a>
+                    <a href="prediction" id="style2" class="list-group-item ">관광객 예측 방법</a>
                 </div>               
             </nav>
             </div>
