@@ -26,15 +26,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="dropdown" >
-                    <a href="#" id="fontcolor" class="dropdown=toggle" data-toggle="dropdown" role="button" aria-expanded="false">프로젝트 소개<span class="caret"></span></a>
-                        <ul  id="style" class="dropdown-menu" role="menu">
-                            <li><a  id="fontcolor" href="soge">연구주제 및 배경</a></li>
-                            <li class="divider"></li>
-                            <li><a  id="fontcolor"  href="soge#연구단계">연구단계</a></li>
-                            <li class="divider"></li>
-                            <li><a  id="fontcolor" href="soge#데이터%20및%20분석방법">데이터 및 분석방법</a></li>                      
-                        </ul>
+                <li>
+                    <a href="soge" id="fontcolor">프로젝트 소개</a>
                </li>
                <li class="dropdown" >
                     <a href="#" id="fontcolor" class="dropdown=toggle" data-toggle="dropdown" role="button" aria-expanded="false">프로젝트 데이터<span class="caret"></span></a>
