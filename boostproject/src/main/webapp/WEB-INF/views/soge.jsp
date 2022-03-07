@@ -90,7 +90,7 @@
                         </span>
                        </div>
                        <img src="./img/soge.jpg">
-                </div><br><br>
+                </div>
                 <br><br>
             </div> <!--메인섹션 컨텐츠 파트-->   
         </div>
