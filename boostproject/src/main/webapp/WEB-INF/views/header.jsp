@@ -32,11 +32,11 @@
                <li class="dropdown" >
                     <a href="#" id="fontcolor" class="dropdown=toggle" data-toggle="dropdown" role="button" aria-expanded="false">프로젝트 데이터<span class="caret"></span></a>
                         <ul  id="style" class="dropdown-menu" role="menu">
-                            <li><a  id="fontcolor" href="gather">데이터 수집</a></li>
+                            <li><a  id="fontcolor" href="gather">리뷰 데이터 수집</a></li>
                             <li class="divider"></li>
-                            <li><a  id="fontcolor"  href="analyze">데이터 분석</a></li>
+                            <li><a  id="fontcolor"  href="analyze">데이터 분석 절차</a></li>
                             <li class="divider"></li>
-                            <li><a  id="fontcolor" href="prediction">데이터 예측</a></li>                      
+                            <li><a  id="fontcolor" href="prediction">관광객 예측 방법</a></li>                      
                         </ul>
                </li>
             <li class="dropdown">
